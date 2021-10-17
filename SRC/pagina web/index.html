@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mi Pagina Web</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+</head>
+
+    <body>
+    <!-- .............................. -->
+    <!-- .........NUESTRA WEB.......... -->
+    <!-- .............................. -->
+
+    <!-- HTML para subir Mediciones a Firebase -->
+        <div class="main-form"> 
+            <h3<p>Pagina web para probar que se conecta a FIREBASE</h3>
+            <p>Añadir una medicion a Firebase</p>
+            <input type="text" placeholder="Introduzca medicion..." id="text_field">
+            <div class="main-form-boton">
+                <button id="submit_btn" onclick="guardarDatos()">Guardar</button>
+            </div>
+        </div>
+
+        <!-- Listado de Mediciones -->
+        <div class="main-list col-sm-6" id="lista_medicion">
+            <div class="list-item">
+                <h4><strong>Lista mediciones:</strong></h4>
+            </div>
+        </div>
+
+        <!-- Ultima medicion que se ha tomado -->
+        <div class="main-list-2 col-sm-6">
+            <div class="last-medicion" id="ultima_medicion">
+                <h4><strong>Ultima medicion:</strong></h4>
+            </div>
+        </div>
+
+        <!-- .............................. -->
+        <!-- .......NUESTROS SCRIPTS....... -->
+        <!-- .............................. -->
+
+        <script src="https://www.gstatic.com/firebasejs/7.2.3/firebase-app.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/7.2.3/firebase-firestore.js"></script><!-- Conectamos con Firestore -->
+
+        <script>
+            var firebaseConfig = {
+                piKey: "AIzaSyBM8MuXxVSjzrMAMSZOxn-AQBhhgISV_vg",
+                authDomain: "gti-3a-cosme-sprint0.firebaseapp.com",
+                projectId: "gti-3a-cosme-sprint0",
+                storageBucket: "gti-3a-cosme-sprint0.appspot.com",
+                messagingSenderId: "1017815374882",
+                appId: "1:1017815374882:web:ac24ab5508fc1b82da7e7b",
+                measurementId: "G-E3TQZ5YRDY"
+            };
+            firebase.initializeApp(firebaseConfig);
+        </script>
+        <!-- Conectamos con nuestro documento js -->
+        <script src="index.js"></script> 
+
+    </body>
+</html>
