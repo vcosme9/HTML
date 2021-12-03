@@ -83,6 +83,6 @@ db.collection("MEDICIONES").onSnapshot(function(querySnapshot) {
 //Añadimos a la pagina web la ultima medicion
 const ultima_medicion = document.querySelector("#ultima_medicion");
 
-db.collection('MEDICIONES').orderBy('postId').orderBy('fecha','asc').limit(1).get().then( function(snapshot) {
+db.collection('MEDICIONES').orderBy('fecha','asc').limit(1).get().then( function(snapshot) {
        ultima_medicion.innerHTML += "<div'><p> Fecha: " + snapshot.fecha + "</p><p> Medicion: " + snapshot.medicion + "</p></div>";
      })
